@@ -13,6 +13,6 @@ public:
   Point2D(const T &a, const V &b) {
     x = a;
     y = b;
-  };
+  }
 };
 } // namespace computational_geometry
