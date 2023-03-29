@@ -7,8 +7,10 @@ template <typename T, typename V> class Point2D {
 public:
   T x;
   V y;
-
-  Point2D(T a, V b) {
+  /// @brief
+  /// @param a
+  /// @param b
+  Point2D(const T &a, const V &b) {
     x = a;
     y = b;
   };
