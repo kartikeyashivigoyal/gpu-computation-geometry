@@ -4,7 +4,7 @@ cc_binary(
     visibility = ["//visibility:public"],
     copts = ["-Isrc/include"],
     deps = [
-        "//src:point",
+        "//src:computational_geometry_lib",
         "//src:computational_geometry_headers",
     ],
 )

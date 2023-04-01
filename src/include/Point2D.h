@@ -1,3 +1,5 @@
+#pragma once
+#include <ostream>
 namespace computational_geometry {
 // Point2D
 /// @brief Point represented by two co-ordinates
@@ -5,8 +7,6 @@ namespace computational_geometry {
 /// @tparam V type of 2nd co-ordinate
 template <typename T, typename V> class Point2D {
 public:
-  T x;
-  V y;
   /// @brief
   /// @param a
   /// @param b
@@ -14,5 +14,21 @@ public:
     x = a;
     y = b;
   }
+
+  friend std::ostream &operator<<(std::ostream &stream, const Point2D &p) {
+    stream << "(" << p.x << ", " << p.y << ")"
+           << "\n";
+    return stream;
+  }
+
+  Point2D operator+(const Point2D &p) {
+    auto ax = (p.x + this->x);
+    auto ay = (p.y + this->y);
+    return Point2D(ax, ay);
+  }
+
+private:
+  T x;
+  V y;
 };
 } // namespace computational_geometry
